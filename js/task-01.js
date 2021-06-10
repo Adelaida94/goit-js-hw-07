@@ -1,5 +1,3 @@
-'use strict'
-
 
 const elItem = document.querySelectorAll('.item');
 const countList = document.querySelectorAll('.item ul');

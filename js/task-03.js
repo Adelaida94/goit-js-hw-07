@@ -13,6 +13,7 @@ const images = [
   },
 ];
 
+
 const imagesList = document.querySelector('ul');
 console.log(imagesList);
 
