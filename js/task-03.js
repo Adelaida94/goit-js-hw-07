@@ -14,22 +14,16 @@ const images = [
 ];
 
 
-const imagesList = document.querySelector('ul');
-console.log(imagesList);
+const galleryList = document.querySelector('#gallery');
 
-const firstImageList = document.createElement('li');
-const secondImageList = document.createElement('li');
-const thirdImageList = document.createElement('li');
+const makeImgEl = ({ url, alt }) => {
+  
+  return `<li> <img src = '${url}' alt = '${alt}' width="500" height="335"></li>`
+};
 
-
-imagesList.append(firstImageList, secondImageList, thirdImageList);
-
-
-firstImageList.insertAdjacentHTML('beforeend', '<img src= "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt= "White and Black Long Fur Cat" width="500" height="335"></img>');
-secondImageList.insertAdjacentHTML('beforeend', '<img src= "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Orange and White Koi Fish Near Yellow Koi Fish" width="500" height="335"></img>')
-thirdImageList.insertAdjacentHTML('beforeend', '<img src= "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Group of Horses Running" width="500" height="335"></img>')
-
-
+const elements = images.map(makeImgEl);
+galleryList.insertAdjacentHTML("beforeend",
+[...elements].join(''));
 
 //  const firstImage = document.createElement('img');
 //  firstImage.src = 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
@@ -46,3 +40,18 @@ thirdImageList.insertAdjacentHTML('beforeend', '<img src= "https://images.pexels
 // console.log(firstImage);
 // console.log(secondImage);
 // console.log(thirdImage);
+
+// const imagesList = document.querySelector('ul');
+// console.log(imagesList);
+
+// const firstImageList = document.createElement('li');
+// const secondImageList = document.createElement('li');
+// const thirdImageList = document.createElement('li');
+
+
+// imagesList.append(firstImageList, secondImageList, thirdImageList);
+
+
+// firstImageList.insertAdjacentHTML('beforeend', '<img src= "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt= "White and Black Long Fur Cat" width="500" height="335"></img>');
+// secondImageList.insertAdjacentHTML('beforeend', '<img src= "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Orange and White Koi Fish Near Yellow Koi Fish" width="500" height="335"></img>')
+// thirdImageList.insertAdjacentHTML('beforeend', '<img src= "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Group of Horses Running" width="500" height="335"></img>')
